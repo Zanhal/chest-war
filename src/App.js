@@ -341,6 +341,7 @@ const ChestPieceWar = () => {
           </div>
         )}
       </div>
+      <a className="zanhal-footer" href="https://zanhal.co/" target="_blank" rel="noopener noreferrer">built by zanhal</a>
     </div>
   );
 };
