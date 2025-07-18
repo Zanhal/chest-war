@@ -3,6 +3,15 @@ import './App.css';
 import html2canvas from 'html2canvas';
 
 const ChestPieceWar = () => {
+  // Microsoft Clarity integration
+  useEffect(() => {
+    if (window.clarity) return; // Prevent double-initialization
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sgx5canx0k");
+  }, []);
   const [gameState, setGameState] = useState('start'); // 'start', 'selectPeople', 'enterNames', 'loading', 'results'
   const [playerCount, setPlayerCount] = useState('');
   const [playerNames, setPlayerNames] = useState([]);
