@@ -11,23 +11,36 @@ const resultsSection = document.getElementById("results");
 const sharedAudioPlayer = new Audio(); // Still used for compatibility, not for flip sounds
 
 const chestQuotes = [
-  { text: "പ പ പാാാാ 🎶🤣", video: "videos/jay.mp4" },
-  { text: "ഉന്നാല്‍ മുഡിയാത് തമ്പി 🔥😹", video: "videos/sra.mp4" },
-  { text: "ഹെ ഹെ ഹെ… 😏🗿", video: "videos/in.mp4" },
-  { text: "🕺🕺🕺🕺🕺", video: "videos/su.mp4" }
+  { text: "പ പ പാാാാ 🎶🤣", video: "public/videos/jay.mp4" },
+  { text: "ഉന്നാല്‍ മുഡിയാത് തമ്പി 🔥😹", video: "public/videos/sra.mp4" },
+  { text: "ഹെ ഹെ ഹെ… 😏🗿", video: "public/videos/in.mp4" },
+  { text: "🕺🕺🕺🕺🕺", video: "public/videos/su.mp4" }
 ];
 
 const legQuotes = [
-  { text: "അഹാാാാാ... ഇപ്പോ എങ്ങനുണ്ട് 🚶", video: "videos/pettu_o.mp4" },
-  { text: "എന്താ അവസ്ഥ 😩😭😭", video: "videos/avastha.mp4" },
-  { text: "ചാച്ചിക്കോ 😢😹", video: "videos/thala.mp4" },
-  { text: "ബ്രോ ഒന്ന് കരഞ്ഞുടേ 🤣😭 ", video: "videos/hari_o.mp4" }
+  { text: "അഹാാാാാ... ഇപ്പോ എങ്ങനുണ്ട് 🚶", video: "public/videos/pettu_o.mp4" },
+  { text: "എന്താ അവസ്ഥ 😩😭😭", video: "public/videos/avastha.mp4" },
+  { text: "ചാച്ചിക്കോ 😢😹", video: "public/videos/thala.mp4" },
+  { text: "ബ്രോ ഒന്ന് കരഞ്ഞുടേ 🤣😭 ", video: "public/videos/hari_o.mp4" }
 ];
+
+// Preload all videos on page load for faster playback
+function preloadAllVideos() {
+  const allVideos = [...chestQuotes, ...legQuotes].map(q => q.video);
+  allVideos.forEach(src => {
+    const video = document.createElement('video');
+    video.src = src;
+    video.preload = 'auto';
+    video.style.display = 'none';
+    document.body.appendChild(video);
+  });
+}
+window.addEventListener('DOMContentLoaded', preloadAllVideos);
 
 let usedChestQuotes = [], usedLegQuotes = [];
 
 const fightButton = document.createElement("button");
-fightButton.textContent = "💥 Fight!";
+fightButton.textContent = "💥 Fight";
 fightButton.style.marginTop = "10px";
 
 const goBackButton = document.createElement("button");
@@ -210,11 +223,11 @@ function createCard(name, quoteObj) {
       stopAllVideos(); // pause/reset others
       li.classList.add("flipped");
 
-      setTimeout(() => {
+      setTimeout(() => {m
         video.muted = false;
         video.currentTime = 0;
         video.play();
-      }, 600);
+      }, 100);
     } else {
       // Already flipped: replay video immediately
       stopAllVideos(); // pause/reset others and this one before replay
