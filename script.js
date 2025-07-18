@@ -217,27 +217,47 @@ function createCard(name, quoteObj) {
 
   li.addEventListener("click", () => {
     const video = li.querySelector("video");
+    const flipBack = li.querySelector(".flip-back");
+    let loader = flipBack.querySelector('.video-loader');
+    if (!loader) {
+      loader = document.createElement('div');
+      loader.className = 'video-loader';
+      loader.style.display = 'none';
+      flipBack.appendChild(loader);
+    }
 
-    if (!li.classList.contains("flipped")) {
-      // First click: flip and play video after animation
-      stopAllVideos(); // pause/reset others
-      li.classList.add("flipped");
+    function showLoader() {
+      loader.style.display = 'block';
+    }
+    function hideLoader() {
+      loader.style.display = 'none';
+    }
 
-      setTimeout(() => {m
-        video.muted = false;
-        video.currentTime = 0;
-        video.play();
-      }, 100);
-    } else {
-      // Already flipped: replay video immediately
-      stopAllVideos(); // pause/reset others and this one before replay
-      video.muted = false;
-      video.currentTime = 0;
+    function onReady() {
+      hideLoader();
+      video.removeEventListener('canplaythrough', onReady);
       video.play();
     }
-  });
 
-  // ...no reroll button logic...
+    if (!li.classList.contains("flipped")) {
+      stopAllVideos();
+      li.classList.add("flipped");
+      setTimeout(() => {
+        showLoader();
+        video.muted = false;
+        video.currentTime = 0;
+        video.addEventListener('canplaythrough', onReady);
+        video.load();
+      }, 100);
+    } else {
+      stopAllVideos();
+      showLoader();
+      video.muted = false;
+      video.currentTime = 0;
+      video.addEventListener('canplaythrough', onReady);
+      video.load();
+    }
+  });
 
   return li;
 }
