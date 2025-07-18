@@ -197,10 +197,10 @@ const ChestPieceWar = () => {
     <div className="app-bg">
       <div className="app-container">
         <h1 className={`app-title${shakeTitle ? ' shake' : ''}`}>
-          Chest Piece War
+        ചിക്കൻ കോടതി
         </h1>
         <p className="app-subtitle">
-          Not everyone will win
+        Chicken Court
         </p>
 
         {/* Start Screen */}
@@ -210,16 +210,16 @@ const ChestPieceWar = () => {
               onClick={handleStartGame}
               className="primary-btn"
             >
-              Start the War
+             Start
             </button>
             
             <div className="info-box">
               <h3 className="info-title">What's This?</h3>
               <p>
-                When your squad orders Shawai or Al Faham and the chest pieces are limited... chaos begins.  
-                This site settles the debate <strong>fair and square</strong>.
-                <br/><br/>
-                Let fate decide who eats chest, who gets legs, and who cries.
+              ചെസ്റ്റ് തർക്കങ്ങൾ ഇനി ചിക്കൻ കോടതിയിൽ!
+
+ചെസ്റ്റിന് വേണ്ടി തല്ലേണ്ട,
+ഇവിടെ തീർപ്പ് ഉണ്ടാകും!
               </p>
             </div>
           </div>
@@ -267,7 +267,7 @@ const ChestPieceWar = () => {
             <div className="btn-row">
               <button 
                 onClick={() => setGameState('selectPeople')}
-                className="primary-btn"
+                className="secondary-btn"
               >
                 Go Back
               </button>
@@ -275,7 +275,7 @@ const ChestPieceWar = () => {
                 onClick={handleFight}
                 className="primary-btn"
               >
-                💥 Fight
+                Next
               </button>
             </div>
           </div>

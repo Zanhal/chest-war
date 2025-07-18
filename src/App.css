@@ -134,10 +134,11 @@
   color: #000;
   border: none;
   border-radius: 14px;
-  padding: 12px 28px;
+  padding: 15px 50px;
   font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
+  
   box-shadow: 0 2px 8px 0 rgba(109,40,217,0.10);
   transition: transform 0.15s, box-shadow 0.15s;
   margin-top: 0;
@@ -152,6 +153,27 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #a78bfa;
+  border: 2px solid #a78bfa;
+  border-radius: 14px;
+  padding: 15px 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(109,40,217,0.10);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+  margin-top: 0;
+  display: inline-block;
+}
+.secondary-btn:hover {
+  background: #a78bfa;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px 0 rgba(109,40,217,0.18);
 }
 
 /* Loading Overlay */
