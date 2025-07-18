@@ -15,17 +15,17 @@ const ChestPieceWar = () => {
   const videoRefs = useRef({});
 
   const chestQuotes = [
-    { text: "പ പ പാാാാ 🎶🤣", video: "jay.mp4" },
-    { text: "ഉന്നാല്‍ മുഡിയാത് തമ്പി 🔥😹", video: "sra.mp4" },
-    { text: "ഹെ ഹെ ഹെ… 😏🗿", video: "in.mp4" },
-    { text: "🕺🕺🕺🕺🕺", video: "su.mp4" }
+    { text: "പ പ പാാാാ 🎶🤣", video: "https://ik.imagekit.io/ojuathkud/videos/jay.mp4?updatedAt=1752833778729" },
+    { text: "ഉന്നാല്‍ മുഡിയാത് തമ്പി 🔥😹", video: "https://ik.imagekit.io/ojuathkud/videos/sra.mp4?updatedAt=1752833773017" },
+    { text: "ഹെ ഹെ ഹെ… 😏🗿", video: "https://ik.imagekit.io/ojuathkud/videos/in.mp4?updatedAt=1752833784761" },
+    { text: "🕺🕺🕺🕺🕺", video: "https://ik.imagekit.io/ojuathkud/videos/su.mp4?updatedAt=1752833772066" }
   ];
-
+  
   const legQuotes = [
-    { text: "അഹാാാാാ... ഇപ്പോ എങ്ങനുണ്ട് 🚶", video: "pettu_o.mp4" },
-    { text: "എന്താ അവസ്ഥ 😩😭😭", video: "avastha.mp4" },
-    { text: "ചാച്ചിക്കോ 😢😹", video: "thala.mp4" },
-    { text: "ബ്രോ ഒന്ന് കരഞ്ഞുടേ 🤣😭 ", video: "hari_o.mp4" }
+    { text: "അഹാാാാാ... ഇപ്പോ എങ്ങനുണ്ട് 🚶", video: "https://ik.imagekit.io/ojuathkud/videos/pettu_o.mp4?updatedAt=1752833752604" },
+    { text: "എന്താ അവസ്ഥ 😩😭😭", video: "https://ik.imagekit.io/ojuathkud/videos/avastha.mp4?updatedAt=1752833778274" },
+    { text: "ചാച്ചിക്കോ 😢😹", video: "https://ik.imagekit.io/ojuathkud/videos/thala.mp4?updatedAt=1752833782508" },
+    { text: "ബ്രോ ഒന്ന് കരഞ്ഞുടേ 🤣😭 ", video: "https://ik.imagekit.io/ojuathkud/videos/hari_o.mp4?updatedAt=1752833747414" }
   ];
 
   const getUniqueQuote = (quotes, usedList) => {
