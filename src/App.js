@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import html2canvas from 'html2canvas';
 
 const ChestPieceWar = () => {
   const [gameState, setGameState] = useState('start'); // 'start', 'selectPeople', 'enterNames', 'loading', 'results'
@@ -142,30 +143,34 @@ const ChestPieceWar = () => {
 
   const handleCardClick = (cardId) => {
     stopAllVideos();
-    setFlippedCards(prev => new Set([...prev, cardId]));
+    setFlippedCards(prev => {
+      if (!prev.has(cardId)) {
+        return new Set([...prev, cardId]);
+      }
+      return prev;
+    });
+    // Always play the video for the clicked card
+    setTimeout(() => {
+      const video = videoRefs.current[cardId];
+      if (video) {
+        video.muted = false;
+        video.currentTime = 0;
+        video.play().catch((e) => {
+          console.warn("Video play failed:", e);
+        });
+      }
+    }, 0);
   };
-
-  useEffect(() => {
-    // Play the video for the most recently flipped card
-    if (flippedCards.size === 0) return;
-    const lastCardId = Array.from(flippedCards).slice(-1)[0];
-    const video = videoRefs.current[lastCardId];
-    if (video) {
-      video.muted = false;
-      video.currentTime = 0;
-      video.play().catch((e) => {
-        console.warn("Video play failed:", e);
-      });
-    }
-  }, [flippedCards]);
 
   const FlipCard = ({ name, quote, cardId }) => {
     const isFlipped = flippedCards.has(cardId);
-    
+    const cardRef = React.useRef(null);
+
     return (
       <li 
         className={`flip-card ${isFlipped ? 'flipped' : ''}`}
         onClick={() => handleCardClick(cardId)}
+        ref={cardRef}
       >
         <div className="flip-inner">
           <div className="flip-front">
@@ -185,6 +190,8 @@ const ChestPieceWar = () => {
       </li>
     );
   };
+
+  const isMobile = () => /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 
   return (
     <div className="app-bg">
@@ -283,7 +290,7 @@ const ChestPieceWar = () => {
 
         {/* Results */}
         {gameState === 'results' && (
-          <div>
+          <div id="results-section">
             <div className="mb-8">
               <h2 className="results-title">🥩 Chest Piece Winners:</h2>
               <ul className="results-list">
@@ -312,12 +319,25 @@ const ChestPieceWar = () => {
               </ul>
             </div>
 
-            <button 
-              onClick={handleReroll}
-              className="primary-btn reroll-btn"
-            >
-              Re roll
-            </button>
+            <div className="btn-row">
+              {isMobile() ? (
+                <>
+                  <button 
+                    onClick={handleReroll}
+                    className="primary-btn reroll-btn"
+                  >
+                    Re roll
+                  </button>
+                </>
+              ) : (
+                <button 
+                  onClick={handleReroll}
+                  className="primary-btn reroll-btn"
+                >
+                  Re roll
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>
