@@ -23,3 +23,14 @@ yarn-debug.log*
 yarn-error.log*
 
 node_modules/
+.yarn/
+.yarnrc
+.yarnrc.yml
+.yarn/cache/
+.yarn/releases/
+.yarn/plugins/
+.yarn/sdks/
+.yarn/versions/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/unplugged/
