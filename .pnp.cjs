@@ -32,9 +32,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:6.6.3"],\
             ["@testing-library/react", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:16.3.0"],\
             ["@testing-library/user-event", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:13.5.0"],\
+            ["autoprefixer", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:10.4.21"],\
+            ["postcss", "npm:8.5.6"],\
             ["react", "npm:19.1.0"],\
             ["react-dom", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:19.1.0"],\
             ["react-scripts", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:5.0.1"],\
+            ["tailwindcss", "npm:4.1.11"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -5989,10 +5992,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:10.4.21", {\
-          "packageLocation": "./.yarn/__virtual__/autoprefixer-virtual-e7cca2f088/0/cache/autoprefixer-npm-10.4.21-0dd6f0f60c-11770ce635.zip/node_modules/autoprefixer/",\
+        ["virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:10.4.21", {\
+          "packageLocation": "./.yarn/__virtual__/autoprefixer-virtual-9a31258280/0/cache/autoprefixer-npm-10.4.21-0dd6f0f60c-11770ce635.zip/node_modules/autoprefixer/",\
           "packageDependencies": [\
-            ["autoprefixer", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:10.4.21"],\
+            ["autoprefixer", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:10.4.21"],\
             ["@types/postcss", null],\
             ["browserslist", "npm:4.25.1"],\
             ["caniuse-lite", "npm:1.0.30001727"],\
@@ -6736,9 +6739,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:6.6.3"],\
             ["@testing-library/react", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:16.3.0"],\
             ["@testing-library/user-event", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:13.5.0"],\
+            ["autoprefixer", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:10.4.21"],\
+            ["postcss", "npm:8.5.6"],\
             ["react", "npm:19.1.0"],\
             ["react-dom", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:19.1.0"],\
             ["react-scripts", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:5.0.1"],\
+            ["tailwindcss", "npm:4.1.11"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -14567,7 +14573,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@csstools/postcss-trigonometric-functions", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:1.0.2"],\
             ["@csstools/postcss-unset-value", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:1.0.2"],\
             ["@types/postcss", null],\
-            ["autoprefixer", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:10.4.21"],\
+            ["autoprefixer", "virtual:652a840deb07ca7f1cc38ae8dfca10f6ffe73797ed8560ae8979bb062a8ce987b43f43c7ec68e1908b45bb4c9d79bfc86e531cd2892b1c353b86ac4138a2bcaa#npm:10.4.21"],\
             ["browserslist", "npm:4.25.1"],\
             ["css-blank-pseudo", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:3.0.3"],\
             ["css-has-pseudo", "virtual:e557c1f10958147e4f0889e8649bdd585b60199bc9be2d3dc3dc5dbbb966aea4aad44720f19c9b3fd55bc5d275e10aae07f2141d10cbd4bb71c2419d73ddf267#npm:3.0.4"],\
@@ -16777,6 +16783,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-selector-parser", "npm:6.1.2"],\
             ["resolve", "patch:resolve@npm%3A1.22.10#~builtin<compat/resolve>::version=1.22.10&hash=c3c19d"],\
             ["sucrase", "npm:3.35.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.1.11", {\
+          "packageLocation": "./.yarn/cache/tailwindcss-npm-4.1.11-0771b18233-db5883219a.zip/node_modules/tailwindcss/",\
+          "packageDependencies": [\
+            ["tailwindcss", "npm:4.1.11"]\
           ],\
           "linkType": "HARD"\
         }]\

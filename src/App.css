@@ -1,38 +1,296 @@
-.App {
+/* App background and container */
+.app-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000 0%, #6d28d9 100%);
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 32px;
+  box-shadow: 0 4px 32px 0 rgba(109,40,217,0.15);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-title {
+  font-family: 'Oswald', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #d6bbfc;
+  margin-bottom: 8px;
+  transition: transform 0.4s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-title.shake {
+  animation: bounce 0.4s;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-10px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.app-subtitle {
+  font-size: 1.1rem;
+  color: #d6bbfc;
+  margin-top: -8px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Start Screen */
+.start-screen {
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid #a78bfa;
+  border-radius: 18px;
+  padding: 18px 14px;
+  margin-top: 24px;
+  font-size: 1rem;
+  color: #c4b5fd;
+  line-height: 1.6;
+}
+
+.info-title {
+  font-family: 'Oswald', Arial, sans-serif;
+  color: #d6bbfc;
+  margin-bottom: 8px;
+}
+
+/* Select People */
+.select-people {
+  margin-top: 20px;
+}
+.label {
+  color: #fff;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+.select {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #a78bfa;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: #6d28d9;
+  color: #e0e7ff;
+  margin-top: 8px;
+  appearance: none;
+  cursor: pointer;
+}
+.mt {
+  margin-top: 12px;
+}
+
+/* Enter Names */
+.enter-names {
+  margin-top: 20px;
+}
+.mb {
+  margin-bottom: 16px;
+}
+.input {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #a78bfa;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: #6d28d9;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.input::placeholder {
+  color: #c4b5fd;
+  opacity: 1;
+}
+.btn-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.primary-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(109,40,217,0.10);
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-top: 0;
+  display: inline-block;
+}
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px 0 rgba(109,40,217,0.18);
+}
+.reroll-btn {
+  margin-top: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #7c3aed;
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Results */
+.results-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.mb-8 {
+  margin-bottom: 32px;
+}
+
+.mt-2{
+  margin-top: 2rem;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+  width: 260px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border: 2px solid #ffffff;
+  border-radius: 14px;
+  background: rgb(45, 3, 49);
+  display: block;
+  overflow: visible;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flip-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.1rem;
+  min-height: 180px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.flip-back {
+  transform: rotateY(180deg);
+  background: rgb(45, 3, 49);
+  border-radius: 14px;
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.flip-card.flipped .flip-front {
+  display: none;
+}
+
+.flip-card.flipped .flip-back {
+  display: flex;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 4px;
+  color: #fffefe;
+}
+
+.quote {
+  font-size: 0.85rem;
+  color: #fdfbfb;
+  font-style: italic;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.quote-video {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+@media (max-width: 500px) {
+  .flip-card {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .quote-video {
+    width: 100%;
+    height: auto;
   }
 }
